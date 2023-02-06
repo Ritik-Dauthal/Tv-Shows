@@ -16,7 +16,7 @@ const ShowListPage: FC<ShowListPageProps> = ({query,shows,queryChange,loading}) 
     <div className="mt-2">
      <div className="flex"> <SearchBar value={query} onChange={(event)=>{queryChange(event.target.value)}} />{loading && <LoadingSpinner/>}</div>
       <div className="flex flex-wrap justify-center">
-        {shows && shows.map((s,index) => <ShowCard key={"ShowCard" + index} castShows={s}/>)}
+        {shows ? shows.map((s,index) => <ShowCard key={"ShowCard" + index} castShows={s}/>): <div className="text-xl font-semibold text-green-800 animate-bounce ">Watch Your Fav. Tv shows here</div>}
       </div>
     </div>
   );
